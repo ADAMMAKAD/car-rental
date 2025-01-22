@@ -1,0 +1,128 @@
+// src/pages/SignIn.scss
+@import '../styles/variables.scss';
+
+.signin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 90px); // Adjust based on Navbar height
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.8)
+  );
+  padding: 2rem;
+
+  .signin-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 3rem 4rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px $shadow-color;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 8px $shadow-color;
+    }
+
+    h2 {
+      margin-bottom: 2rem;
+      color: $text-black;
+      font-family: $heading-font;
+      font-size: 2rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 2.9rem;
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        label {
+          margin-bottom: 0.5rem;
+          color: $text-black;
+          font-weight: 500;
+          font-family: $text-font;
+        }
+
+        input {
+          width: 100%;
+          padding: 0.75rem 1rem;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          font-size: $p-size;
+          font-family: $text-font;
+          transition: border-color 0.3s ease;
+
+          &:focus {
+            border-color: $text-orange;
+            outline: none;
+          }
+
+          &.input-error {
+            border-color: rgb(39, 187, 138);
+          }
+        }
+
+        .error-msg {
+          color: rgb(22, 158, 90);
+          font-size: 0.9rem;
+          margin-top: 0.5rem;
+          font-family: $text-font;
+        }
+      }
+
+      .submit-btn {
+        padding: 0.75rem 1.5rem;
+        background-color: $text-orange;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: $p-size;
+        font-family: $text-font;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+
+        &:hover {
+          background-color: darken($text-orange, 10%);
+          transform: translateY(-3px);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+
+    p {
+      margin-top: 2rem;
+      color: $text-black;
+      font-family: $text-font;
+
+      a {
+        color: $text-orange;
+        text-decoration: none;
+        font-weight: 500;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: $breakpoint-mobile) {
+  .signin-container {
+    padding: 1rem;
+
+    .signin-card {
+      padding: 2rem 1.5rem;
+    }
+  }
+}

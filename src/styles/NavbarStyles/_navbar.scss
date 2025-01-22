@@ -1,0 +1,219 @@
+@use "../global/" as *;
+
+.navbar {
+  max-width: 133rem;
+  width: 100%;
+  height: 70px; // Set a fixed height for consistent spacing
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem; // Adjusted padding for vertical alignment
+  position: fixed; // Change from absolute to fixed for sticky behavior
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.8); // Semi-transparent background
+  backdrop-filter: blur(10px); // Adds a blur effect for a modern look
+  z-index: 99999;
+  margin: 0 auto;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+  // Add shadow when scrolled
+  &.scrolled {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  &__logo {
+    width: 14.5rem;
+
+    img {
+      width: 100%;
+      height: auto; // Maintain aspect ratio
+    }
+  }
+
+  &__links {
+    display: flex;
+    list-style: none;
+    gap: 2.1rem;
+
+    a {
+      font-size: $p-size;
+      font-family: $text-font;
+      font-weight: 500;
+      color: $text-white;
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover,
+      &.active-link { // Highlight active link
+        color: $text-orange;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 2.5rem;
+    font-size: $p-size;
+    font-family: $text-font;
+    font-weight: 500;
+    align-items: center;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+
+    &__sign-in {
+      color: $text-white;
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $text-orange;
+      }
+    }
+
+    &__register {
+      background-color: $text-orange;
+      color: white;
+      padding: 0.75rem 1.5rem; // Adjusted padding for better proportions
+      border-radius: 3px;
+      box-shadow: 0 4px 6px rgba(255, 83, 48, 0.35);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        box-shadow: 0 6px 8px rgba(255, 83, 48, 0.5);
+        background-color: #299b1f; // Darker shade on hover
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  /* Hamburger Menu Icon */
+  &__hamburger {
+    font-size: 2.8rem;
+    display: none;
+    cursor: pointer;
+    color: $text-white;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $text-orange;
+    }
+
+    @media (max-width: 1000px) {
+      display: flex;
+    }
+  }
+}
+
+// Mobile Navbar Styles
+.mobile-navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  background-color: rgba(255, 255, 255, 0.95); // Slightly transparent for modern look
+  z-index: 999999;
+  justify-content: center;
+  align-items: center;
+  transition: left 0.5s ease-in-out;
+
+  &__close {
+    font-size: 3rem;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    color: $text-black;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $text-orange;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    font-size: 2.3rem;
+    gap: 3rem;
+    text-align: center;
+
+    li {
+      a {
+        text-decoration: none;
+        color: $text-black;
+        font-weight: 500;
+        transition: color 0.3s;
+
+        &:hover,
+        &.active-link { // Highlight active link
+          color: $text-orange;
+        }
+      }
+    }
+  }
+
+  /* Mobile Buttons */
+  .mobile-navbar__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 3rem;
+
+    .sign-in,
+    .register {
+      width: 200px;
+      text-align: center;
+      padding: 0.75rem 1.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .sign-in {
+      background-color: transparent;
+      color: $text-black;
+      border: 2px solid $text-black;
+
+      &:hover {
+        background-color: $text-black;
+        color: #ffffff;
+      }
+    }
+
+    .register {
+      background-color: $text-orange;
+      color: white;
+      border: none;
+      box-shadow: 0 4px 6px rgba(255, 83, 48, 0.35);
+
+      &:hover {
+        box-shadow: 0 6px 8px rgba(255, 83, 48, 0.5);
+        background-color: #299b1f;
+      }
+    }
+  }
+}
+
+/* Active Mobile Navbar */
+.open-nav {
+  left: 0;
+}

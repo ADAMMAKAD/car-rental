@@ -1,0 +1,139 @@
+// About.scss
+
+.about-page {
+  background-color: #f9f9f9;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .about-main {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 4rem 0;
+
+    &__img-wrapper {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    &__img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    &__text {
+      flex: 1;
+      max-width: 600px;
+
+      &__subtitle {
+        font-size: 1.2rem;
+        color: #ff7f50; // Orange color
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+      }
+
+      &__title {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 1.5rem;
+        font-family: "Montserrat", sans-serif;
+      }
+
+      &__description {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 2rem;
+        font-family: "Roboto", sans-serif;
+      }
+
+      &__icons {
+        display: flex;
+        gap: 2rem;
+        flex-wrap: wrap;
+
+        &__box {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+
+          img {
+            width: 50px;
+            height: 50px;
+          }
+
+          span {
+            h4 {
+              font-size: 1.5rem;
+              color: #ff7f50; // Orange color
+            }
+
+            p {
+              font-size: 1rem;
+              color: #555;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Book Banner Section
+.book-banner {
+  position: relative;
+  background-image: url("/src/images/banners/banner-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 0;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+
+  &__content {
+    h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    &__contact {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      i {
+        font-size: 1.5rem;
+        color: #ff7f50; // Orange color
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        color: #fff;
+      }
+    }
+  }
+}

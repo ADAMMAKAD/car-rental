@@ -1,0 +1,21 @@
+// src/styles/_variables.scss
+
+// Font Sizes
+$p-size: 1rem;
+$heading-size: 2rem;
+
+// Fonts
+$text-font: 'Roboto', sans-serif;
+$heading-font: 'Montserrat', sans-serif;
+
+// Colors
+$text-white: #ffffff;
+$text-black: #333333;
+$text-orange: #ff532c;
+$bg-white: #ffffff;
+$bg-transparent: rgba(255, 255, 255, 0.8);
+$shadow-color: rgba(0, 0, 0, 0.1);
+
+// Breakpoints
+$breakpoint-mobile: 768px;
+$breakpoint-tablet: 1000px;

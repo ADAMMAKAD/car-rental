@@ -1,0 +1,288 @@
+/* src/components/Hero/Hero.module.css */
+
+.heroSection {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 165, 0, 0.6); /* Orange overlay */
+    z-index: 1;
+  }
+  
+  .container {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .heroContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .heroText {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    margin-right: 20px;
+    text-align: left;
+  }
+  
+  .subHeading {
+    font-size: 2rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .mainHeading {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+    line-height: 1.2;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  .mainHeading span {
+    color: #ff7f50; /* Shade of orange */
+  }
+  
+  .description {
+    font-size: 1.3rem;
+    margin-bottom: 35px;
+    line-height: 1.6;
+    color: #fff;
+  }
+  
+  .bookingForm {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .formGroup label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .formGroup input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .formGroup input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 127, 80, 0.5);
+  }
+  
+  .bookButton {
+    display: flex;
+    align-items: center;
+    background-color: #ff7f50; /* Coral color */
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .bookButton:hover {
+    background-color: #ff5722; /* Darker orange */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+  }
+  
+  .carImageContainer {
+    flex: 1;
+    min-width: 300px;
+    max-width: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .carImage {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    animation: float 6s ease-in-out infinite;
+    transition: transform 0.3s ease;
+  }
+  
+  .carImage:hover {
+    transform: scale(1.05);
+  }
+  
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  
+  /* Scroll-to-top Button */
+  .scrollUp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #ff7f50;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .showScroll {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .scrollUp:hover {
+    background-color: #ff5722;
+  }
+  
+  .scrollUp svg {
+    font-size: 1.5rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .mainHeading {
+      font-size: 3.5rem;
+    }
+  
+    .description {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .heroContent {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .heroText {
+      margin-right: 0;
+    }
+  
+    .mainHeading {
+      font-size: 3rem;
+    }
+  
+    .bookingForm {
+      justify-content: center;
+    }
+  
+    .carImageContainer {
+      margin-top: 30px;
+    }
+  
+    .carImage {
+      max-width: 70%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .heroSection {
+      padding: 60px 10px;
+    }
+  
+    .mainHeading {
+      font-size: 2.5rem;
+    }
+  
+    .subHeading {
+      font-size: 1.5rem;
+    }
+  
+    .description {
+      font-size: 1rem;
+    }
+  
+    .bookButton {
+      padding: 12px 20px;
+      font-size: 1rem;
+    }
+  
+    .scrollUp {
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      right: 20px;
+    }
+  
+    .scrollUp svg {
+      font-size: 1.2rem;
+    }
+  
+    .bookingForm {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .formGroup {
+      width: 100%;
+    }
+  
+    .bookButton {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
