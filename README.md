@@ -81,7 +81,5 @@ The project includes additional scripts that you can run using the `npm run` com
 -   `build`: Build the project for production.
 -   `eject`: Eject the project configuration from create-react-app.
 
-## Conclusion
 
-You should now have the React project set up on your local machine. Feel free to explore and modify the code to meet your requirements. If you encounter any issues, please refer to the project's documentation or seek support from the project's maintainers.
 # jewel
